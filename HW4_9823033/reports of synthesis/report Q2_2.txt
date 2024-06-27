@@ -1,0 +1,449 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
+ 
+--> Reading design: RFCorrelator.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "RFCorrelator.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "RFCorrelator"
+Output Format                      : NGC
+Target Device                      : xc6slx16-3-csg324
+
+---- Source Options
+Top Module Name                    : RFCorrelator
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "C:\Xilinx\codes\HW4\correlation_32.v" into library work
+Parsing module <correlation_32>.
+WARNING:HDLCompiler:568 - "C:\Xilinx\codes\HW4\correlation_32.v" Line 49: Constant value is truncated to fit in <4> bits.
+Analyzing Verilog file "C:\Xilinx\codes\HW4\RFCorrelator.v" into library work
+Parsing module <RFCorrelator>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <RFCorrelator>.
+WARNING:HDLCompiler:872 - "C:\Xilinx\codes\HW4\RFCorrelator.v" Line 32: Using initial value of Num_2 since it is never assigned
+WARNING:HDLCompiler:872 - "C:\Xilinx\codes\HW4\RFCorrelator.v" Line 33: Using initial value of Num_16 since it is never assigned
+
+Elaborating module <correlation_32>.
+WARNING:HDLCompiler:413 - "C:\Xilinx\codes\HW4\correlation_32.v" Line 110: Result of 8-bit expression is truncated to fit in 7-bit target.
+WARNING:HDLCompiler:413 - "C:\Xilinx\codes\HW4\correlation_32.v" Line 78: Result of 7-bit expression is truncated to fit in 6-bit target.
+WARNING:HDLCompiler:413 - "C:\Xilinx\codes\HW4\correlation_32.v" Line 91: Result of 5-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "C:\Xilinx\codes\HW4\RFCorrelator.v" Line 48: Result of 7-bit expression is truncated to fit in 6-bit target.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <RFCorrelator>.
+    Related source file is "C:\Xilinx\codes\HW4\RFCorrelator.v".
+    Found 4-bit register for signal <out_str>.
+    Found 32-bit register for signal <shift_reg>.
+    Found 6-bit register for signal <counter>.
+    Found 6-bit adder for signal <counter[5]_GND_1_o_add_0_OUT> created at line 48.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  42 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
+Unit <RFCorrelator> synthesized.
+
+Synthesizing Unit <correlation_32>.
+    Related source file is "C:\Xilinx\codes\HW4\correlation_32.v".
+    Found 4-bit register for signal <out_4>.
+    Found 7-bit adder for signal <GND_2_o_GND_2_o_add_763_OUT> created at line 110.
+    Found 7-bit adder for signal <GND_2_o_GND_2_o_add_766_OUT> created at line 110.
+    Found 7-bit adder for signal <GND_2_o_GND_2_o_add_769_OUT> created at line 110.
+    Found 7-bit adder for signal <GND_2_o_GND_2_o_add_772_OUT> created at line 110.
+    Found 7-bit adder for signal <GND_2_o_GND_2_o_add_775_OUT> created at line 110.
+    Found 7-bit adder for signal <GND_2_o_GND_2_o_add_778_OUT> created at line 110.
+    Found 7-bit adder for signal <GND_2_o_GND_2_o_add_781_OUT> created at line 110.
+    Found 7-bit adder for signal <GND_2_o_GND_2_o_add_784_OUT> created at line 110.
+    Found 7-bit adder for signal <GND_2_o_GND_2_o_add_787_OUT> created at line 110.
+    Found 7-bit adder for signal <GND_2_o_GND_2_o_add_790_OUT> created at line 110.
+    Found 7-bit adder for signal <GND_2_o_GND_2_o_add_793_OUT> created at line 110.
+    Found 7-bit adder for signal <GND_2_o_GND_2_o_add_796_OUT> created at line 110.
+    Found 7-bit adder for signal <GND_2_o_GND_2_o_add_799_OUT> created at line 110.
+    Found 7-bit adder for signal <GND_2_o_GND_2_o_add_802_OUT> created at line 110.
+    Found 7-bit adder for signal <GND_2_o_GND_2_o_add_805_OUT> created at line 110.
+    Found 7-bit adder for signal <GND_2_o_GND_2_o_add_808_OUT> created at line 110.
+    Found 7-bit adder for signal <GND_2_o_GND_2_o_add_811_OUT> created at line 110.
+    Found 7-bit adder for signal <GND_2_o_GND_2_o_add_814_OUT> created at line 110.
+    Found 7-bit adder for signal <GND_2_o_GND_2_o_add_817_OUT> created at line 110.
+    Found 7-bit adder for signal <GND_2_o_GND_2_o_add_820_OUT> created at line 110.
+    Found 7-bit adder for signal <GND_2_o_GND_2_o_add_823_OUT> created at line 110.
+    Found 7-bit adder for signal <GND_2_o_GND_2_o_add_826_OUT> created at line 110.
+    Found 7-bit adder for signal <GND_2_o_GND_2_o_add_829_OUT> created at line 110.
+    Found 7-bit adder for signal <GND_2_o_GND_2_o_add_832_OUT> created at line 110.
+    Found 7-bit adder for signal <GND_2_o_GND_2_o_add_835_OUT> created at line 110.
+    Found 7-bit adder for signal <GND_2_o_GND_2_o_add_838_OUT> created at line 110.
+    Found 7-bit adder for signal <GND_2_o_GND_2_o_add_841_OUT> created at line 110.
+    Found 7-bit adder for signal <GND_2_o_GND_2_o_add_844_OUT> created at line 110.
+    Found 7-bit adder for signal <GND_2_o_GND_2_o_add_847_OUT> created at line 110.
+    Found 7-bit adder for signal <GND_2_o_GND_2_o_add_850_OUT> created at line 110.
+    Found 7-bit adder for signal <GND_2_o_GND_2_o_add_853_OUT> created at line 110.
+    Found 6-bit comparator greater for signal <GND_2_o_GND_2_o_LessThan_1563_o> created at line 86
+    Summary:
+	inferred  31 Adder/Subtractor(s).
+	inferred   4 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred  33 Multiplexer(s).
+Unit <correlation_32> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 32
+ 6-bit adder                                           : 1
+ 7-bit adder                                           : 31
+# Registers                                            : 4
+ 32-bit register                                       : 1
+ 4-bit register                                        : 2
+ 6-bit register                                        : 1
+# Comparators                                          : 1
+ 6-bit comparator greater                              : 1
+# Multiplexers                                         : 35
+ 32-bit 2-to-1 multiplexer                             : 1
+ 5-bit 2-to-1 multiplexer                              : 1
+ 6-bit 2-to-1 multiplexer                              : 2
+ 7-bit 2-to-1 multiplexer                              : 31
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <RFCorrelator>.
+The following registers are absorbed into counter <counter>: 1 register on signal <counter>.
+Unit <RFCorrelator> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 31
+ 7-bit adder                                           : 31
+# Counters                                             : 1
+ 6-bit up counter                                      : 1
+# Registers                                            : 40
+ Flip-Flops                                            : 40
+# Comparators                                          : 1
+ 6-bit comparator greater                              : 1
+# Multiplexers                                         : 34
+ 32-bit 2-to-1 multiplexer                             : 1
+ 5-bit 2-to-1 multiplexer                              : 1
+ 6-bit 2-to-1 multiplexer                              : 1
+ 7-bit 2-to-1 multiplexer                              : 31
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+INFO:Xst:2261 - The FF/Latch <out_4_0> in Unit <correlation_32> is equivalent to the following 2 FFs/Latches, which will be removed : <out_4_1> <out_4_2> 
+
+Optimizing unit <RFCorrelator> ...
+
+Optimizing unit <correlation_32> ...
+INFO:Xst:2261 - The FF/Latch <out_str_0> in Unit <RFCorrelator> is equivalent to the following 2 FFs/Latches, which will be removed : <out_str_1> <out_str_2> 
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block RFCorrelator, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 42
+ Flip-Flops                                            : 42
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : RFCorrelator.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 49
+#      LUT2                        : 34
+#      LUT3                        : 1
+#      LUT4                        : 1
+#      LUT5                        : 1
+#      LUT6                        : 11
+#      VCC                         : 1
+# FlipFlops/Latches                : 42
+#      FDC                         : 40
+#      FDCE                        : 2
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 6
+#      IBUF                        : 2
+#      OBUF                        : 4
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx16csg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:              42  out of  18224     0%  
+ Number of Slice LUTs:                   48  out of   9112     0%  
+    Number used as Logic:                48  out of   9112     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:     50
+   Number with an unused Flip Flop:       8  out of     50    16%  
+   Number with an unused LUT:             2  out of     50     4%  
+   Number of fully used LUT-FF pairs:    40  out of     50    80%  
+   Number of unique control sets:         2
+
+IO Utilization: 
+ Number of IOs:                           7
+ Number of bonded IOBs:                   7  out of    232     3%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+Clock                              | BUFGP                  | 42    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 3.074ns (Maximum Frequency: 325.357MHz)
+   Minimum input arrival time before clock: 3.085ns
+   Maximum output required time after clock: 3.668ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'Clock'
+  Clock period: 3.074ns (frequency: 325.357MHz)
+  Total number of paths / destination ports: 295 / 43
+-------------------------------------------------------------------------
+Delay:               3.074ns (Levels of Logic = 2)
+  Source:            counter_4 (FF)
+  Destination:       shift_reg_2 (FF)
+  Source Clock:      Clock rising
+  Destination Clock: Clock rising
+
+  Data Path: counter_4 to shift_reg_2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              6   0.447   1.089  counter_4 (counter_4)
+     LUT6:I1->O           17   0.203   1.028  Mmux_GND_1_o_Bit_stream_mux_2_OUT1101 (Mmux_GND_1_o_Bit_stream_mux_2_OUT110)
+     LUT2:I1->O            1   0.205   0.000  Mmux_GND_1_o_Bit_stream_mux_2_OUT311 (GND_1_o_Bit_stream_mux_2_OUT<8>)
+     FDC:D                     0.102          shift_reg_8
+    ----------------------------------------
+    Total                      3.074ns (0.957ns logic, 2.117ns route)
+                                       (31.1% logic, 68.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'Clock'
+  Total number of paths / destination ports: 43 / 43
+-------------------------------------------------------------------------
+Offset:              3.085ns (Levels of Logic = 1)
+  Source:            Reset (PAD)
+  Destination:       shift_reg_0 (FF)
+  Destination Clock: Clock rising
+
+  Data Path: Reset to shift_reg_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            42   1.222   1.433  Reset_IBUF (Reset_IBUF)
+     FDC:CLR                   0.430          shift_reg_0
+    ----------------------------------------
+    Total                      3.085ns (1.652ns logic, 1.433ns route)
+                                       (53.5% logic, 46.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'Clock'
+  Total number of paths / destination ports: 4 / 4
+-------------------------------------------------------------------------
+Offset:              3.668ns (Levels of Logic = 1)
+  Source:            out_str_0 (FF)
+  Destination:       out_str<2> (PAD)
+  Source Clock:      Clock rising
+
+  Data Path: out_str_0 to out_str<2>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             3   0.447   0.650  out_str_0 (out_str_0)
+     OBUF:I->O                 2.571          out_str_2_OBUF (out_str<2>)
+    ----------------------------------------
+    Total                      3.668ns (3.018ns logic, 0.650ns route)
+                                       (82.3% logic, 17.7% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock Clock
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+Clock          |    3.074|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 7.00 secs
+Total CPU time to Xst completion: 6.62 secs
+ 
+--> 
+
+Total memory usage is 4502376 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    7 (   0 filtered)
+Number of infos    :    2 (   0 filtered)
+
